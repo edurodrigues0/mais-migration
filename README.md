@@ -108,6 +108,14 @@ npm run dist:win7:x64
 
 A branch `main` (Electron 34) permanece para Windows 10/11. Não misture os instaladores: use sempre o Setup-Win7 correspondente à arquitetura do PC.
 
+### Smoke checklist (máquina/VM real)
+
+1. Instalar `*-ia32.exe` em Windows 7 SP1 **32 bits** → app abre, wizard carrega.
+2. Instalar `*-x64.exe` em Windows 7 SP1 **64 bits** → idem.
+3. Conectar destino Postgres (`destino.ini`) e rodar preview com plugin demo ou Clipp.
+
+Build validado neste ambiente (Windows moderno): `npm run build`, `npm test`, empacotamento dos dois NSIS e abertura do `release\win-unpacked\MAIS Migration.exe` (x64).
+
 ## Fluxo do wizard
 
 1. Selecionar ERP  
