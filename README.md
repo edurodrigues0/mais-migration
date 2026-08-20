@@ -75,6 +75,39 @@ npm test
 npm run build
 ```
 
+## Build legado Windows 7 (branch `win7`)
+
+Esta branch usa **Electron 22.3.27** (última linha com suporte a Windows 7/8/8.1) e gera **dois instaladores NSIS**.
+
+| Arquivo | Usar em |
+|---------|---------|
+| `MAIS Migration-Setup-Win7-<versão>-ia32.exe` | Windows 7 **32 bits** |
+| `MAIS Migration-Setup-Win7-<versão>-x64.exe` | Windows 7 **64 bits** |
+
+Requisitos do cliente:
+
+- Windows 7 SP1 (32 ou 64 bits)
+- Gerar o instalador em máquina **Windows x64** (nativos Firebird/`pg`)
+
+```bash
+npm install
+npm run dist:win7
+```
+
+Isso gera **apenas** os dois Setup separados (x64 e depois ia32). Artefatos em `release/`:
+
+- `MAIS Migration-Setup-Win7-0.1.0-x64.exe`
+- `MAIS Migration-Setup-Win7-0.1.0-ia32.exe`
+
+Builds isolados:
+
+```bash
+npm run dist:win7:ia32
+npm run dist:win7:x64
+```
+
+A branch `main` (Electron 34) permanece para Windows 10/11. Não misture os instaladores: use sempre o Setup-Win7 correspondente à arquitetura do PC.
+
 ## Fluxo do wizard
 
 1. Selecionar ERP  

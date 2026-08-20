@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "description": "Migrador de ERPs — aplicação desktop para suporte N1",
   "author": "MAIS",
-  "main": "./out/main/index.js",
+  "main": "./out/main/index.cjs",
   "type": "module",
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",
     "preview": "electron-vite preview",
-    "dist": "npm run build && electron-builder --win nsis",
+    "dist": "npm run build && electron-builder --win nsis --x64",
+    "dist:win7": "npm run build && npm run dist:win7:pack",
+    "dist:win7:pack": "electron-builder --win nsis --x64 && electron-builder --win nsis --ia32",
+    "dist:win7:ia32": "npm run build && electron-builder --win nsis --ia32",
+    "dist:win7:x64": "npm run build && electron-builder --win nsis --x64",
+    "postinstall": "electron-builder install-app-deps",
     "test": "vitest run",
     "test:watch": "vitest",
     "db:generate": "drizzle-kit generate",
@@ -37,8 +42,8 @@
     "@types/uuid": "^10.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "drizzle-kit": "^0.30.4",
-    "electron": "^34.0.2",
-    "electron-builder": "^25.1.8",
+    "electron": "22.3.27",
+    "electron-builder": "24.13.3",
     "electron-vite": "^2.3.0",
     "typescript": "^5.7.3",
     "vite": "^5.4.14",
@@ -47,6 +52,7 @@
   "build": {
     "appId": "com.mais.migration",
     "productName": "MAIS Migration",
+    "electronVersion": "22.3.27",
     "directories": {
       "output": "release"
     },
@@ -82,10 +88,10 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "MAIS Migration",
+      "shortcutName": "MAIS Migration Win7",
       "unicode": true,
       "deleteAppDataOnUninstall": false,
-      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "artifactName": "${productName}-Setup-Win7-${version}-${arch}.${ext}",
       "installerLanguages": [
         "pt_BR"
       ]

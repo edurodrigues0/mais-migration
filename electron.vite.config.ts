@@ -13,11 +13,15 @@ const aliases = {
   '@ui': resolve('src/ui')
 }
 
+/** Electron 22 ≈ Node 16 — alinhado ao build legado Win7. */
+const electron22Target = 'node16'
+
 export default defineConfig({
   main: {
     plugins: [externalizeDepsPlugin()],
     resolve: { alias: aliases },
     build: {
+      target: electron22Target,
       rollupOptions: {
         input: {
           index: resolve('src/main/index.ts')
@@ -29,6 +33,7 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()],
     resolve: { alias: aliases },
     build: {
+      target: electron22Target,
       rollupOptions: {
         input: {
           index: resolve('src/preload/index.ts')
