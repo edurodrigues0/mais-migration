@@ -1,0 +1,11 @@
+{
+  "id": "clipp",
+  "name": "Clipp",
+  "version": "1.0.0",
+  "description": "Integração Firebird (.fdb) — clientes, taxas UF e produtos",
+  "supportedEntities": [
+    "cliente",
+    "taxa_uf",
+    "produto"
+  ]
+}

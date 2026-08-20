@@ -1,0 +1,7 @@
+{
+  "id": "demo",
+  "name": "Demo ERP",
+  "version": "1.0.0",
+  "description": "Plugin de referência com dados fictícios para validar o pipeline",
+  "supportedEntities": ["empresa", "cliente", "produto", "fornecedor"]
+}

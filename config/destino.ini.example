@@ -1,0 +1,16 @@
+; MAIS Migration — conexão do Postgres de DESTINO (Mais Gestão)
+; Suporte: copie este arquivo para destino.ini (mesma pasta) e preencha os dados.
+; Depois abra o aplicativo novamente.
+
+[database]
+host=127.0.0.1
+port=5432
+database=mais_gestao
+user=postgres
+password=
+ssl=false
+
+[migration]
+; Opcional — a empresa de destino é selecionada no wizard (lista do Postgres).
+; Se preenchido, pode ser usado como sugestão inicial na UI.
+; idempresa=

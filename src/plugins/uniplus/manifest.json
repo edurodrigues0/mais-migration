@@ -1,0 +1,21 @@
+{
+  "id": "uniplus",
+  "name": "UniPlus",
+  "version": "0.1.0",
+  "description": "Integração Postgres — plano de contas, entidade, produto, hierarquia, financeiro, notas e OS",
+  "supportedEntities": [
+    "plano_contas",
+    "hierarquia",
+    "entidade",
+    "produto",
+    "financeiro",
+    "financeiro_lancamento",
+    "nota_fiscal",
+    "nota_fiscal_item",
+    "ordem_servico",
+    "ordem_servico_evento",
+    "ordem_servico_faturamento",
+    "ordem_servico_item",
+    "ordem_servico_item_lote"
+  ]
+}
